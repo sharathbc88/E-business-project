@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Window shopping</title>
@@ -14,6 +15,25 @@
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
     <!-- Favicons -->
     <link rel="showroom" href="assets/ico/showroom.png">
+
+    <!-- JavaScript to validate signup and login -->
+    <script>
+        function validateSignupInfo(document) {
+            var pwdInput = document.getElementById("signupPwd");
+            var pwdErrorMsg = document.getElementById('signupPwd_errorMsg');
+
+            if (pwdInput.value.empty()) {
+                pwdInput.value = "";
+                pwdInput.focus();
+
+                pwdErrorMsg.innerHTML = "<br>You must choose a password. Please try again.";
+                return false;
+            }
+            pwdErrorMsg.innerHTML = "";
+            return true;
+        }
+    </script>
+
 </head>
 <body>
 <!-- 
@@ -141,22 +161,25 @@ Lower Header Section
                 <div class="span4">
                     <div class="well">
                         <h5>CREATE YOUR ACCOUNT</h5><br/>
-                        Enter your email address and your preferred password to create your account.<br/><br/><br/>
+                        Enter your email address and your preferred password to register a new Showroom account.<br/><br/><br/>
                         <form>
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email address</label>
                                 <div class="controls">
-                                    <input class="span3" type="text" placeholder="Email">
+                                    <input class="span3" id="signupEmail" placeholder="Email">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="inputPassword">Password</label>
                                 <div class="controls">
-                                    <input type="password" class="span3" placeholder="Password">
+                                    <input type="password" id="signupPwd" class="span3" placeholder="Password">
                                 </div>
                             </div>
                             <div class="controls">
-                                <button type="submit" class="btn block">Create Your Account</button>
+                                <button type="submit" class="btn block" onClick="return validateSignupInfo(document)">Create Your Account</button>
+                            </div>
+                            <div>
+                                <p id="signupPwd_errorMsg"></p>
                             </div>
                         </form>
                     </div>
@@ -180,7 +203,7 @@ Lower Header Section
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <button type="submit" class="defaultBtn">Sign in</button>
+                                    <button type="submit" class="btn block">Sign in</button>
                                     <a href="#">Forget password?</a>
                                 </div>
                             </div>
