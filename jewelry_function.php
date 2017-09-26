@@ -23,11 +23,8 @@ function display_jewelry($sql_result)
         $price = number_format($row["price"],2);
         $description = $row["description"];
 
-        print "  <td><a href='jewelry_details.php?id=$id&name=$name' title='Book Details'>$id</a></td>\n";
-        if($id)
-            print "  <td>$id</td>\n";
-        else
-            print "&nbsp;";
+        print "  <td><a href='jewelry_details.php?id=$id&name=$name' title='Jewelry Details'>$id</a></td>\n";
+
         if($name)
             print "  <td>$name</td>\n";
         else
