@@ -107,10 +107,10 @@ Lower Header Section
                             <div class="dropdown-menu">
                                 <form class="form-horizontal loginFrm">
                                     <div class="control-group">
-                                        <input type="text" class="span2" id="inputEmail" placeholder="Email">
+                                        <input type="text" class="span2" placeholder="Email">
                                     </div>
                                     <div class="control-group">
-                                        <input type="password" class="span2" id="inputPassword" placeholder="Password">
+                                        <input type="password" class="span2" placeholder="Password">
                                     </div>
                                     <div class="control-group">
                                         <label class="checkbox">
@@ -162,17 +162,24 @@ Lower Header Section
                     <div class="well">
                         <h5>CREATE YOUR ACCOUNT</h5><br/>
                         Enter your email address and your preferred password to register a new Showroom account.<br/><br/><br/>
-                        <form>
+                        <form action="registration_process.php" method="post">
                             <div class="control-group">
                                 <label class="control-label" for="inputEmail">Email address</label>
                                 <div class="controls">
-                                    <input class="span3" id="signupEmail" placeholder="Email">
+                                    <input type="email" class="span3" id="email" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="inputPassword">Password</label>
+                                <label class="control-label">Name</label>
                                 <div class="controls">
-                                    <input type="password" id="signupPwd" class="span3" placeholder="Password">
+                                    <input type="text" class="span3" id="name" name="name" placeholder="Name">
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">Password</label>
+                                <div class="controls">
+                                    <input type="password" id="password" name="password" class="span3" placeholder="Password">
                                 </div>
                             </div>
                             <div class="controls">
@@ -188,17 +195,17 @@ Lower Header Section
                 <div class="span4">
                     <div class="well">
                         <h5>ALREADY REGISTERED ?</h5>
-                        <form>
+                        <form action="login.php" method="post">
                             <div class="control-group">
-                                <label class="control-label" for="inputEmail">Email</label>
+                                <label class="control-label" >Email</label>
                                 <div class="controls">
-                                    <input class="span3" type="text" placeholder="Email">
+                                    <input class="span3" id="inputEmail" name="inputEmail" type="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" for="inputPassword">Password</label>
+                                <label class="control-label">Password</label>
                                 <div class="controls">
-                                    <input type="password" class="span3" placeholder="Password">
+                                    <input type="password" id="inputPassword" name="inputPassword" class="span3" placeholder="Password">
                                 </div>
                             </div>
                             <div class="control-group">
@@ -213,4 +220,4 @@ Lower Header Section
             </div>
 
         </div>
-    </div>
+    </div></div>

@@ -1,6 +1,7 @@
 <?php
 include_once('config.php');
 
+
 if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['password'] != "") {
 	$name = $_POST['name'];
 	$email = $_POST['email'];
@@ -16,10 +17,12 @@ if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['password'] != "") {
 	if($conn -> query($sql))
 	{
 		echo "<h1>Welcome to the shop, $name!</h1>";
-		echo "<p>You can now login as a customer</p><a href=\"login.php\">here</a>";
+		echo "<p>You can now login as a customer</p>";
 		echo '<td align="right"><input type="submit" name="submit" value="Sign up" onClick="login.php"></td>';
+        header("Location: index.html");
 	}
 	$conn -> close();
+
 }
 else {
     echo "<h1>Snap! Something was wrong...</h1>";

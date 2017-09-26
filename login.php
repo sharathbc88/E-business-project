@@ -1,15 +1,16 @@
 <?php
 //must appear BEFORE the <html> tag
 session_start();
+ob_start();
 include_once('config.php');
 
-if(isset($_REQUEST["email"])&& isset($_REQUEST["email"]) )
+if(isset($_REQUEST["inputEmail"])&& isset($_REQUEST["inputEmail"]) )
 {
     echo "Login attempt";
 
-    $email = $_REQUEST["email"];
+    $email = $_REQUEST["inputEmail"];
 
-    $password = $_REQUEST["password"];
+    $password = $_REQUEST["inputPassword"];
 	
 	if ($email && $password)
 	{
@@ -33,11 +34,30 @@ if(isset($_REQUEST["email"])&& isset($_REQUEST["email"]) )
 }
 if (isset($_SESSION['valid_user']))
 {
+    header("location: members_only.php");
+}
+else
+{
+    if (isset($email))
+    {
+        // if user tried and failed to log in
+        echo "<b>Incorrect - Please try it again </b><br>";
+        echo "<a href=registration.html>>Sign-up</a><br>";
+        echo "<a href=login.html>Login</a><br>";
+    }
+    else
+    {
+        // user has not tried to log in yet or has logged out
+        echo "<b>You are not logged in</b><br>";
+        echo "<a href=login.html>Login</a><br>";
+    }
+/*if (isset($_SESSION['valid_user']))
+{
     echo "<p>You are logged in as " . $_SESSION['valid_user'] . "</p>";
     echo "<p>Members only content goes here</p>";
     echo "<a href=\"logout.php\">Logout</a>";
 
-  header("location: members_only.php");  
+  header("Refresh:5; url=index.html");
 }
 else
 {
@@ -54,8 +74,8 @@ else
       echo "<p>Members only content goes here</p>";
       echo "<a href=\"logout.php\">Logout</a>";
 
-      header("location: members_only.php");
-  }
+      header("location: index.html");
+  }*/
 /*
   // provide form to log in: same page for action  
   echo "<form method=post action=\"login.php\">";
@@ -70,7 +90,6 @@ else
 */
 }
 
-?>
 
 
 

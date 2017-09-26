@@ -7,7 +7,8 @@ $name = $_REQUEST["name"];
 $conn  = db_connect();
 
 //create a query to get all details of book
-$sql = "SELECT id, name, price, description from jewelry";
+$sql = "SELECT id, name, price, description";
+$sql = $sql . " FROM jewelry WHERE id = '$id'";
 
 $sql_result = $conn -> query($sql);
 $conn -> close();

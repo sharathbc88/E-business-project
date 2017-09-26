@@ -34,7 +34,7 @@
     // if user was not logged in but came to this page somehow
     echo "You were not logged in, and so have not been logged out.<br>"; 
   }
-  echo '<a href="login.php">Back to login page</a>';
+  echo '<a href="login.html">Back to login page</a>';
   echo '</body>';
   echo '</html>';
 ?> 
