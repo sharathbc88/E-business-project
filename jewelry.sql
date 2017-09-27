@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `jewery`
 --
 
-CREATE TABLE `jewery` (
+CREATE TABLE `jewelry` (
   `id` int(11) NOT NULL,
   `name` char(50) NOT NULL,
   `categories` char(30) NOT NULL,
