@@ -42,7 +42,7 @@ else
     {
         // if user tried and failed to log in
         echo "<b>Incorrect - Please try it again </b><br>";
-        echo "<a href=registration.html>>Sign-up</a><br>";
+        echo "<a href=login.html>>Sign-up</a><br>";
         echo "<a href=login.html>Login</a><br>";
     }
     else

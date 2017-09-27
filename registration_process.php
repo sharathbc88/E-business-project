@@ -1,5 +1,7 @@
 <?php
 include_once('config.php');
+session_start();
+ob_start();
 
 
 if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['password'] != "") {
@@ -18,8 +20,9 @@ if($_POST['name'] != "" && $_POST['email'] != "" && $_POST['password'] != "") {
 	{
 		echo "<h1>Welcome to the shop, $name!</h1>";
 		echo "<p>You can now login as a customer</p>";
-		echo '<td align="right"><input type="submit" name="submit" value="Sign up" onClick="login.php"></td>';
-        header("Location: index.html");
+
+        echo"<p>You will be redirected to login page in 5 seconds</p>";
+        header("Refresh:5; url=login.html");
 	}
 	$conn -> close();
 
